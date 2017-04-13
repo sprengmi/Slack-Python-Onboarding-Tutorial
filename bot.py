@@ -91,6 +91,13 @@ class Bot(object):
                                       user=user_id)
         dm_id = new_dm["channel"]["id"]
         return dm_id
+		
+	def post_msg(self, team_id, channel):
+		new_msg = self.client.api_call("chat.postMessage", channel=channel, text="Hello from Python! :tada:")
+		return new_msg
+		
+	#def test_msg(self, team_id, user_id):
+		
 
     def onboarding_message(self, team_id, user_id):
         """
